@@ -108,7 +108,8 @@ def extract_features_labels():
         all_features = []
         all_labels = []
         for img_path in image_paths:
-            file_name= img_path.split('.')[1].split('/')[-1]
+            #file_name= img_path.split('.')[1].split('/')[-1]
+            file_name= img_path.split('.')[1].split('\\')[-1]
 
             # load image
             img = image.img_to_array(
