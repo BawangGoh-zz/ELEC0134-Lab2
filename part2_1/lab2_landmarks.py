@@ -6,6 +6,10 @@ import dlib
 
 # PATH TO ALL IMAGES
 global basedir, image_paths, target_size
+
+# Modified the directory
+#currdir = os.path.abspath(os.curdir)
+#basedir = os.path.join(currdir,'dataset')
 basedir = './dataset'
 images_dir = os.path.join(basedir,'celeba')
 labels_filename = 'labels.csv'
@@ -108,8 +112,9 @@ def extract_features_labels():
         all_features = []
         all_labels = []
         for img_path in image_paths:
-            file_name= img_path.split('.')[1].split('/')[-1]
-
+            #file_name= img_path.split('.')[1].split('/')[-1]
+            file_name= img_path.split('.')[1].split('\\')[-1]
+            
             # load image
             img = image.img_to_array(
                 image.load_img(img_path,
